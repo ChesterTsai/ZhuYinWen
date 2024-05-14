@@ -1,11 +1,11 @@
 #include <iostream>
 #include <string>
 
-// ™`≠µ§Â∏—±Kæπ
+// ÁåîÓÑÆ„ÇÖÁßÜÁõûÁ´ü
 
 std::string changeToChuYing(std::string chuYingWeng){
 	std::string x = " 1qaz2wsx3edc4rfv5tgb6yhn7ujm8ik,9ol.0p;/-";
-	std::string y[] = {" ", "£t", "£u", "£v", "£w", "£x", "£y", "£z", "£{", "£æ", "£|", "£}", "£~", "£ø", "£°", "£¢", "££", "£§", "£•", "£¶", "£ß", "£Ω", "£®", "£©", "£™", "£ª", "£∏", "£π", "£∫", "£´", "£¨", "£≠", "£Æ", "£Ø", "£∞", "£±", "£≤", "£≥", "£¥", "£µ", "£∂", "£∑"};
+	std::string y[] = {" ", "„ÑÖ", "„ÑÜ", "„Ñá", "„Ñà", "„Ñâ", "„Ñä", "„Ñã", "„Ñå", "Àá", "„Ñç", "„Ñé", "„Ñè", "Àã", "„Ñê", "„Ñë", "„Ñí", "„Ñì", "„Ñî", "„Ñï", "„Ññ", "Àä", "„Ñó", "„Ñò", "„Ñô", "Àô", "„Ñß", "„Ñ®", "„Ñ©", "„Ñö", "„Ñõ", "„Ñú", "„Ñù", "„Ñû", "„Ñü", "„Ñ†", "„Ñ°", "„Ñ¢", "„Ñ£", "„Ñ§", "„Ñ•", "„Ñ¶"};
 		
 	int lenOfInput = chuYingWeng.length();
 	int lenOfDecoder = x.length();
@@ -22,6 +22,7 @@ std::string changeToChuYing(std::string chuYingWeng){
 	return decodedChuYing;
 }
 
+/*
 std::string changeToPingYin(std::string chuYingWeng){
 	std::string x = " 1qaz2wsx3edc4rfv5tgb6yhn7ujm8ik,9ol.0p;/-";
 	std::string y[] = {" ", "b", "p", "m", "f", "d", "t", "n", "l", " ", "g", "k", "h", " ", "j", "q", "x", "zh", "ch", "sh", "r", " ", "z", "c", "s", " ", "yi", "wu", "vu", "a", "o", "e", "e", "ai", "ei", "ao", "ou", "an", "in", "ang", "eng", "er"};
@@ -39,15 +40,16 @@ std::string changeToPingYin(std::string chuYingWeng){
 	}
 	return pinYing;
 }
+*/
 
 int main(){
 	std::string chuYingWeng = "";
-	std::cout << "øÈ§J™`≠µ§Â°G";
+	std::cout << "Ëº∏ÂÖ•Ê≥®Èü≥ÊñáÔºö";
 	std::getline(std::cin, chuYingWeng);
 	
-	std::cout << "∏—ƒ∂µ≤™G°G" << changeToChuYing(chuYingWeng) << "\n";
+	std::cout << "Ëß£Ë≠ØÁµêÊûúÔºö" << changeToChuYing(chuYingWeng) << "\n";
 	
-	//std::cout << "´˜≠µ°G" << changeToPingYin(chuYingWeng) << "\n";
+	//std::cout << "ÊãºÈü≥" << changeToPingYin(chuYingWeng) << "\n";
 	
 	system("pause");
 	
