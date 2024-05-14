@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 
-// 猔ゅ秆盞竟
+// 注音文解密器
 
 std::string changeToChuYing(std::string chuYingWeng){
 	std::string x = " 1qaz2wsx3edc4rfv5tgb6yhn7ujm8ik,9ol.0p;/-";
