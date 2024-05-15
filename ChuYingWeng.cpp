@@ -51,7 +51,7 @@ int main(){
 	
 	//std::cout << "拼音" << changeToPingYin(chuYingWeng) << "\n";
 	
-	std::cout << "Press Any Key To Continue...";
+	std::cout << "Press Enter Key To Continue...";
 	std::cin.get();
 	
 	return 0;
