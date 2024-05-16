@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <algorithm>
 
 // 注音文解密器
 
@@ -42,10 +43,17 @@ std::string changeToPingYin(std::string chuYingWeng){
 }
 */
 
+void stolower(std::string& s){
+    std::transform (s.begin(), s.end(), s.begin(),
+                    [](unsigned char c) { return std::tolower(c); });
+}
+
 int main(){
 	std::string chuYingWeng = "";
 	std::cout << "輸入注音文：";
 	std::getline(std::cin, chuYingWeng);
+
+	stolower(chuYingWeng);
 	
 	std::cout << "解譯結果：" << changeToChuYing(chuYingWeng) << "\n";
 	
