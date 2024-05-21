@@ -46,9 +46,10 @@ std::string changeToChuYing(std::string chuYingWeng){
 // 	return pinYing;
 // }
 
-void stolower(std::string& s){
-    std::transform (s.begin(), s.end(), s.begin(),
-                    [](unsigned char c) { return std::tolower(c); });
+void stolower(std::string &s){
+	std::transform(s.begin(), s.end(), s.begin(), [](unsigned char c){
+		return std::tolower(c);
+	});
 }
 
 int main(){
