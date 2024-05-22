@@ -4,12 +4,11 @@
 
 // 注音文解密器
 
-std::string wordReplace(char inputA, char inputB, std::string inputC, std::string replacedWord){
-	if(inputA != inputB){
-		return replacedWord;
+std::string wordReplace(char sameWordA, char sameWordB, std::string replaceWithThisWord, std::string replaceResult){
+	if(sameWordA == sameWordB){
+		replaceResult = replaceResult + replaceWithThisWord;
 	}
-	replacedWord = replacedWord + inputC;
-	return replacedWord;
+	return replaceResult;
 }
 
 std::string changeToChuYing(std::string chuYingWeng){
