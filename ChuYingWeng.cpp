@@ -6,7 +6,7 @@
 
 std::string wordReplace(char sameWordA, char sameWordB, std::string replaceWithThisWord, std::string replaceResult){
 	if(sameWordA == sameWordB){
-		replaceResult = replaceResult + replaceWithThisWord;
+		replaceResult += replaceWithThisWord;
 	}
 	return replaceResult;
 }
