@@ -2,7 +2,7 @@
 // author	Chester
 // version	2.3
 // description	Convert weird numbers and signs to zhuYin
-// source	
+// source	https://github.com/ChesterTsai/ZhuYinWen.git
 
 #include <iostream>
 #include <string>
