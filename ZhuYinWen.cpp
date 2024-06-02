@@ -1,8 +1,8 @@
-// name		注音文解密器, ZhuYinWen Decoder
-// author	Chester
-// version	2.3
-// description	Convert weird numbers and signs to zhuYin
-// source	https://github.com/ChesterTsai/ZhuYinWen.git
+// @name	注音文解密器, ZhuYinWen Decoder
+// @author	Chester
+// @version	2.3
+// @description	Convert weird numbers and signs to zhuYin
+// @source	https://github.com/ChesterTsai/ZhuYinWen.git
 
 #include <iostream>
 #include <string>
