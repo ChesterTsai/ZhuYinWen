@@ -1,8 +1,12 @@
+// name		注音文解密器, ZhuYinWen Decoder
+// author	Chester
+// version	2.3
+// description	Convert weird numbers and signs to zhuYin
+// source	
+
 #include <iostream>
 #include <string>
 #include <algorithm>
-
-// 注音文解密器
 
 std::string wordReplace(char sameWordA, char sameWordB, std::string replaceWithThisWord, std::string replaceResult){
 	if(sameWordA == sameWordB){
@@ -11,38 +15,37 @@ std::string wordReplace(char sameWordA, char sameWordB, std::string replaceWithT
 	return replaceResult;
 }
 
-std::string changeToChuYing(std::string chuYingWeng){
+std::string changeToZhuYin(std::string zhuYinWen){
 	std::string x = " 1qaz2wsx3edc4rfv5tgb6yhn7ujm8ik,9ol.0p;/-";
 	std::string y[] = {" ", "ㄅ", "ㄆ", "ㄇ", "ㄈ", "ㄉ", "ㄊ", "ㄋ", "ㄌ", "ˇ", "ㄍ", "ㄎ", "ㄏ", "ˋ", "ㄐ", "ㄑ", "ㄒ", "ㄓ", "ㄔ", "ㄕ", "ㄖ", "ˊ", "ㄗ", "ㄘ", "ㄙ", "˙", "ㄧ", "ㄨ", "ㄩ", "ㄚ", "ㄛ", "ㄜ", "ㄝ", "ㄞ", "ㄟ", "ㄠ", "ㄡ", "ㄢ", "ㄣ", "ㄤ", "ㄥ", "ㄦ"};
 
-	int lenOfInput = chuYingWeng.length();
+	int lenOfInput = zhuYinWen.length();
 	int lenOfDecoder = x.length();
-	std::string decodedChuYing = "";
+	std::string decodedZhuYin = "";
 
 	for(int i = 0; i < lenOfInput; i++){
 		for(int j = 0; j < lenOfDecoder; j++){
-			decodedChuYing = wordReplace(chuYingWeng[i], x[j], y[j], decodedChuYing);
+			decodedZhuYin = wordReplace(zhuYinWen[i], x[j], y[j], decodedZhuYin);
 		}
 	}
 
-	return decodedChuYing;
+	return decodedZhuYin;
 }
 
-
-// std::string changeToPingYin(std::string chuYingWeng){
+// std::string changeToPinYin(std::string zhuYinWen){
 // 	std::string x = " 1qaz2wsx3edc4rfv5tgb6yhn7ujm8ik,9ol.0p;/-";
 // 	std::string y[] = {" ", "b", "p", "m", "f", "d", "t", "n", "l", " ", "g", "k", "h", " ", "j", "q", "x", "zh", "ch", "sh", "r", " ", "z", "c", "s", " ", "yi", "wu", "vu", "a", "o", "e", "e", "ai", "ei", "ao", "ou", "an", "in", "ang", "eng", "er"};
 
-// 	int lenOfInput = chuYingWeng.length();
+// 	int lenOfInput = zhuYinWen.length();
 // 	int lenOfDecoder = x.length();
-// 	std::string pinYing = "";
+// 	std::string pinYin = "";
 
 // 	for(int i = 0; i < lenOfInput; i++){
 // 		for(int j = 0; j < lenOfDecoder; j++){
-// 			pinYing = wordReplace(chuYingWeng[i], x[j], y[j], pinYing);
+// 			pinYin = wordReplace(zhuYinWen[i], x[j], y[j], pinYin);
 // 		}
 // 	}
-// 	return pinYing;
+// 	return pinYin;
 // }
 
 void stolower(std::string &s){
@@ -52,15 +55,15 @@ void stolower(std::string &s){
 }
 
 int main(){
-	std::string chuYingWeng = "";
+	std::string zhuYinWen = "";
 	std::cout << "輸入注音文：";
-	std::getline(std::cin, chuYingWeng);
+	std::getline(std::cin >> std::ws, zhuYinWen);
 
-	stolower(chuYingWeng);
+	stolower(zhuYinWen);
 
-	std::cout << "解譯結果：" << changeToChuYing(chuYingWeng) << "\n";
+	std::cout << "解譯結果：" << changeToZhuYin(zhuYinWen) << "\n";
 
-	// std::cout << "拼音" << changeToPingYin(chuYingWeng) << "\n";
+	// std::cout << "拼音" << changeToPinYin(zhuYinWen) << "\n";
 
 	std::cout << "Press Enter Key To Continue...";
 	std::cin.get();
