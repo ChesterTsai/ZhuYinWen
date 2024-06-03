@@ -8,7 +8,7 @@ WARN: If you downloaded the source code and want to edit it using Dev-C++, there
 
 Windows使用者:<br />
 按下右邊的Release按鈕，選擇最新的版本，並下載.exe檔即可在您的電腦上運行<br />
-若您選擇下載源代碼，這是需要注意的：<br />
+※若您選擇下載源代碼，這是需要注意的：<br />
 下載下來的源代碼需要被轉換成ASCII編碼以防止顯示亂碼，因為Windows是使用ASCII而不是Linux或Mac使用的UTF-8編碼。<br />
 <br />
 Linux使用者:<br />
@@ -21,7 +21,7 @@ Linux使用者:<br />
 <br /><br />
 For Windows Users:<br />
 Press the "Release" button on the right hand side, choose the newest version, and download the .exe file to run it on your PC.<br />
-If you choose to download the source code, here what you need to know:<br />
+※If you choose to download the source code, here what you need to know:<br />
 Source code that you've downloaded need to be change into ASCII, since Windows is using ASCII instead of UTF-8 which is used in Linux and Mac.<br />
 <br />
 For Linux Users:<br />
