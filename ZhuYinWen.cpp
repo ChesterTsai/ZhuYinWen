@@ -1,32 +1,65 @@
 // @name	注音文解密器, ZhuYinWen Decoder
 // @author	Chester
-// @version	2.3
+// @version	2.4
 // @description	Convert weird numbers and signs to zhuYin
 // @source	https://github.com/ChesterTsai/ZhuYinWen.git
 
 #include <iostream>
 #include <string>
 #include <algorithm>
-
-std::string wordReplace(char sameWordA, char sameWordB, std::string replaceWithThisWord, std::string replaceResult){
-	if(sameWordA == sameWordB){
-		replaceResult += replaceWithThisWord;
-	}
-	return replaceResult;
-}
+#include <map>
 
 std::string changeToZhuYin(std::string zhuYinWen){
-	std::string x = " 1qaz2wsx3edc4rfv5tgb6yhn7ujm8ik,9ol.0p;/-";
-	std::string y[] = {" ", "ㄅ", "ㄆ", "ㄇ", "ㄈ", "ㄉ", "ㄊ", "ㄋ", "ㄌ", "ˇ", "ㄍ", "ㄎ", "ㄏ", "ˋ", "ㄐ", "ㄑ", "ㄒ", "ㄓ", "ㄔ", "ㄕ", "ㄖ", "ˊ", "ㄗ", "ㄘ", "ㄙ", "˙", "ㄧ", "ㄨ", "ㄩ", "ㄚ", "ㄛ", "ㄜ", "ㄝ", "ㄞ", "ㄟ", "ㄠ", "ㄡ", "ㄢ", "ㄣ", "ㄤ", "ㄥ", "ㄦ"};
+	std::map<char, std::string> map1 = {
+		{' ', " "},
+		{'1', "ㄅ"},
+		{'q', "ㄆ"},
+		{'a', "ㄇ"},
+		{'z', "ㄈ"},
+		{'2', "ㄉ"},
+		{'w', "ㄊ"},
+		{'s', "ㄋ"},
+		{'x', "ㄌ"},
+		{'3', "ˇ"},
+		{'e', "ㄍ"},
+		{'d', "ㄎ"},
+		{'c', "ㄏ"},
+		{'4', "ˋ"},
+		{'r', "ㄐ"},
+		{'f', "ㄑ"},
+		{'v', "ㄒ"},
+		{'5', "ㄓ"},
+		{'t', "ㄔ"},
+		{'g', "ㄕ"},
+		{'b', "ㄖ"},
+		{'6', "ˊ"},
+		{'y', "ㄗ"},
+		{'h', "ㄘ"},
+		{'n', "ㄙ"},
+		{'7', "˙"},
+		{'u', "ㄧ"},
+		{'j', "ㄨ"},
+		{'m', "ㄩ"},
+		{'8', "ㄚ"},
+		{'i', "ㄛ"},
+		{'k', "ㄜ"},
+		{',', "ㄝ"},
+		{'9', "ㄞ"},
+		{'o', "ㄟ"},
+		{'l', "ㄠ"},
+		{'.', "ㄡ"},
+		{'0', "ㄢ"},
+		{'p', "ㄣ"},
+		{';', "ㄤ"},
+		{'/', "ㄥ"},
+		{'-', "ㄦ"}
+	};
 
 	int lenOfInput = zhuYinWen.length();
-	int lenOfDecoder = x.length();
 	std::string decodedZhuYin = "";
 
 	for(int i = 0; i < lenOfInput; i++){
-		for(int j = 0; j < lenOfDecoder; j++){
-			decodedZhuYin = wordReplace(zhuYinWen[i], x[j], y[j], decodedZhuYin);
-		}
+		decodedZhuYin += map1[zhuYinWen[i]];
 	}
 
 	return decodedZhuYin;
