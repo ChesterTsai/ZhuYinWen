@@ -15,8 +15,8 @@ Linux使用者:<br />
 您可以選擇<br />
 1.下載源代碼，並自行編譯成執行檔。<br />
 或是<br />
-2.選擇按下右邊的Release按鈕，選擇最新的版本，下載.out檔，於terminal內找出該檔案存放位置，並打上"./(檔案名稱).out"即可執行檔案<br />
-※如果出現.out檔沒有執行權限的錯誤訊息，請於terminal打上"chmod +x (檔案名稱).out"※<br />
+2.選擇按下右邊的Release按鈕，選擇最新的版本，下載.run檔，於terminal內找出該檔案存放位置，並打上"./(檔案名稱).run"即可執行檔案<br />
+※如果出現.run檔沒有執行權限的錯誤訊息，請於terminal打上"chmod +x (檔案名稱).run"※<br />
 
 <br /><br />
 For Windows Users:<br />
@@ -28,5 +28,5 @@ For Linux Users:<br />
 You can choose wether to<br />
 1.Download the code and run it by yourself.<br />
 or<br />
-2.Press the "Release" button on the right hand side, choose the newest version, download the .out file, find the file from your terminal, and type "./(FileName).out" to run the file.<br />
-※If you can't run the .out file because not having permission, please type "chmod +x (FileName).out" in the terminal.※
+2.Press the "Release" button on the right hand side, choose the newest version, download the .run file, find the file from your terminal, and type "./(FileName).run" to run the file.<br />
+※If you can't run the .run file because not having permission, please type "chmod +x (FileName).run" in the terminal.※
