@@ -1,9 +1,9 @@
 // @name	注音文解密器, ZhuYinWen Decoder
 // @author	Chester
-// @version	3.0
+// @version	3.2
 // @description	Convert weird numbers and signs to zhuYin
 // @source	https://github.com/ChesterTsai/ZhuYinWen.git
-// @lastUpdate	2024.06.08
+// @lastUpdate	2024.07.07
 
 #include <iostream>
 #include <string>
@@ -76,47 +76,50 @@ std::string changeToZhuYin(std::string zhuYinWen){
 // 轉換成拼音
 std::string changeToPinYin(std::string zhuYinWen){
 
-	// 一般情況下的拼音map
+	// 定義注音符號對應拼音的 map
 	std::map<char, std::string> mapForPinYin = {
-		{' ', "-"},
-		{'1', "b"},
-		{'q', "p"},
-		{'a', "m"},
-		{'z', "f"},
-		{'2', "d"},
-		{'w', "t"},
-		{'s', "n"},
-		{'x', "l"},
-		{'3', "ˇ"},
-		{'e', "g"},
-		{'d', "k"},
-		{'c', "h"},
-		{'4', "ˋ"},
-		{'r', "j"},
-		{'f', "q"},
-		{'v', "x"},
-		{'5', "zh"},
-		{'t', "ch"},
-		{'g', "sh"},
-		{'b', "r"},
-		{'6', "ˊ"},
-		{'y', "z"},
-		{'h', "c"},
-		{'n', "s"},
-		{'7', " "},
-		{'8', "a"},
-		{'i', "o"},
-		{'k', "e"},
-		{',', "e"},
-		{'9', "ai"},
-		{'o', "ei"},
-		{'l', "ao"},
-		{'.', "ou"},
-		{'0', "an"},
-		{'p', "en"},
-		{';', "ang"},
-		{'/', "eng"},
-		{'-', "er"}
+		{' ', "-"}, 
+		{'1', "b"}, // ㄅ
+		{'q', "p"}, // ㄆ
+		{'a', "m"}, // ㄇ
+		{'z', "f"}, // ㄈ
+		{'2', "d"}, // ㄉ
+		{'w', "t"}, // ㄊ
+		{'s', "n"}, // ㄋ
+		{'x', "l"}, // ㄌ
+		{'3', "ˇ"}, // ˇ
+		{'e', "g"}, // ㄍ
+		{'d', "k"}, // ㄎ
+		{'c', "h"}, // ㄏ
+		{'4', "ˋ"}, // ˋ
+		{'r', "j"}, // ㄐ
+		{'f', "q"}, // ㄑ
+		{'v', "x"}, // ㄒ
+		{'5', "zh"}, // ㄓ
+		{'t', "ch"}, // ㄔ
+		{'g', "sh"}, // ㄕ
+		{'b', "r"}, // ㄖ
+		{'6', "ˊ"}, // ˊ
+		{'y', "z"}, // ㄗ
+		{'h', "c"},// ㄘ
+		{'n', "s"}, // ㄙ
+		{'7', " "}, // ˙
+		{'u', "y"}, // 一
+		{'j', "w"}, // ㄨ
+		{'m', "v"}, // ㄩ
+		{'8', "a"}, // ㄚ
+		{'i', "o"}, // ㄛ
+		{'k', "e"}, // ㄠ
+		{',', "e"}, // ㄝ
+		{'9', "ai"}, // ㄞ
+		{'o', "ei"}, // ㄟ
+		{'l', "ao"}, // ㄠ
+		{'.', "ou"}, // ㄡ
+		{'0', "an"}, // ㄢ
+		{'p', "en"}, // ㄣ
+		{';', "ang"}, // ㄤ
+		{'/', "eng"}, // ㄥ
+		{'-', "er"} // ㄦ
 	};
 
 	// 聲母爲"ㄩ"時的map
@@ -137,10 +140,10 @@ std::string changeToPinYin(std::string zhuYinWen){
 		{'6', "uˊ"},
 		{'3', "uˇ"},
 		{'4', "uˋ"},
-		{'8', "ue"},	// ㄨㄚ
-		{'i', "uan"},	// ㄨㄛ
-		{'9', "un"},	// ㄨㄞ
-		{'o', "iong"},	// ㄨㄟ
+		{'8', "ua"},	// ㄨㄚ
+		{'i', "uo"},	// ㄨㄛ
+		{'9', "uai"},	// ㄨㄞ
+		{'o', "ui"},	// ㄨㄟ
 		{'0', "uan"},	// ㄨㄢ
 		{'p', "un"},	// ㄨㄣ
 		{';', "uang"},	// ㄨㄤ
@@ -168,22 +171,33 @@ std::string changeToPinYin(std::string zhuYinWen){
 	std::string decodedPinYin = "";
 
 	for(int i = 0; i < lenOfInput; i++){
-
 		// 找出聲母
 		switch(zhuYinWen[i])
 		{
 		// 若聲母為"ㄩ"
 		case 'm':
+			if(i==0 || (zhuYinWen[i-1] == ' ' || zhuYinWen[i-1] == '3' || zhuYinWen[i-1] == '4' || zhuYinWen[i-1] == '6' || zhuYinWen[i-1] == '7')){
+				decodedPinYin += mapForPinYin[zhuYinWen[i]];
+				break;
+			}
 			decodedPinYin += mapForM[zhuYinWen[i + 1]];
 			i += 1;
 			break;
 		// 若聲母爲"ㄨ"
 		case 'j':
+			if(i==0 || (zhuYinWen[i-1] == ' ' || zhuYinWen[i-1] == '3' || zhuYinWen[i-1] == '4' || zhuYinWen[i-1] == '6' || zhuYinWen[i-1] == '7')){
+				decodedPinYin += mapForPinYin[zhuYinWen[i]];
+				break;
+			}
 			decodedPinYin += mapForJ[zhuYinWen[i + 1]];
 			i += 1;
 			break;
 		// 若聲母爲"一"
 		case 'u':
+			if(i==0 || (zhuYinWen[i-1] == ' ' || zhuYinWen[i-1] == '3' || zhuYinWen[i-1] == '4' || zhuYinWen[i-1] == '6' || zhuYinWen[i-1] == '7')){
+				decodedPinYin += mapForPinYin[zhuYinWen[i]];
+				break;
+			}
 			decodedPinYin += mapForU[zhuYinWen[i + 1]];
 			i += 1;
 			break;
