@@ -76,7 +76,7 @@ std::string changeToZhuYin(std::string zhuYinWen){
 // 轉換成拼音
 std::string changeToPinYin(std::string zhuYinWen){
 
-	// 定義注音符號對應拼音的 map
+	// 一般情況下的拼音map
 	std::map<char, std::string> mapForPinYin = {
 		{' ', "-"}, 
 		{'1', "b"}, // ㄅ
