@@ -45,7 +45,7 @@ First Step (Download the latest release):
 第二步（給予運行權限）：<br>
 Second step (Give it permission to run the file):
 
-    cmode +x ./ZhuYinWen.run
+    chmod +x ./ZhuYinWen.run
 第三步（執行程式）：<br>
 Third step (Run the program):
 
