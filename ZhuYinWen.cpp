@@ -176,9 +176,9 @@ std::string changeToPinYin(std::string zhuYinWen){
 		bool isUJM = (zhuYinWen[i] == 'u' || zhuYinWen[i] == 'j' || zhuYinWen[i] == 'm');
 
 		// 判斷ㄧㄨㄩ是放在介音還是聲母的位置, 輸出True則ㄧㄨㄩ放在聲母位置; False則ㄧㄨㄩ放在介音位置
-		bool isIntial = (i==0 || (zhuYinWen[i-1] == ' ' || zhuYinWen[i-1] == '3' || zhuYinWen[i-1] == '4' || zhuYinWen[i-1] == '6' || zhuYinWen[i-1] == '7'));
+		bool isInitial = (i==0 || (zhuYinWen[i-1] == ' ' || zhuYinWen[i-1] == '3' || zhuYinWen[i-1] == '4' || zhuYinWen[i-1] == '6' || zhuYinWen[i-1] == '7'));
 
-		if(!isUJM || (isUJM && isIntial)){
+		if(!isUJM || (isUJM && isInitial)){
 			decodedPinYin += mapForPinYin[zhuYinWen[i]];
 		}else{
 			switch (zhuYinWen[i])
