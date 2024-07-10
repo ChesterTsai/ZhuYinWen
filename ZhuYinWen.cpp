@@ -2,8 +2,8 @@
 // @author	Chester
 // @version	3.2
 // @description	Convert weird numbers and signs to zhuYin
-// @source	https://github.com/ChesterTsai/ZhuYinWen.git
-// @lastUpdate	2024.07.07
+// @source	https://github.com/ChesterTsai/ZhuYinWen
+// @lastUpdate	2024.07.010
 
 #include <iostream>
 #include <string>
@@ -171,40 +171,34 @@ std::string changeToPinYin(std::string zhuYinWen){
 	std::string decodedPinYin = "";
 
 	for(int i = 0; i < lenOfInput; i++){
-		// 找出聲母
-		switch(zhuYinWen[i])
-		{
-		// 若聲母為"ㄩ"
-		case 'm':
-			if(i==0 || (zhuYinWen[i-1] == ' ' || zhuYinWen[i-1] == '3' || zhuYinWen[i-1] == '4' || zhuYinWen[i-1] == '6' || zhuYinWen[i-1] == '7')){
-				decodedPinYin += mapForPinYin[zhuYinWen[i]];
-				break;
-			}
-			decodedPinYin += mapForM[zhuYinWen[i + 1]];
-			i += 1;
-			break;
-		// 若聲母爲"ㄨ"
-		case 'j':
-			if(i==0 || (zhuYinWen[i-1] == ' ' || zhuYinWen[i-1] == '3' || zhuYinWen[i-1] == '4' || zhuYinWen[i-1] == '6' || zhuYinWen[i-1] == '7')){
-				decodedPinYin += mapForPinYin[zhuYinWen[i]];
-				break;
-			}
-			decodedPinYin += mapForJ[zhuYinWen[i + 1]];
-			i += 1;
-			break;
-		// 若聲母爲"一"
-		case 'u':
-			if(i==0 || (zhuYinWen[i-1] == ' ' || zhuYinWen[i-1] == '3' || zhuYinWen[i-1] == '4' || zhuYinWen[i-1] == '6' || zhuYinWen[i-1] == '7')){
-				decodedPinYin += mapForPinYin[zhuYinWen[i]];
-				break;
-			}
-			decodedPinYin += mapForU[zhuYinWen[i + 1]];
-			i += 1;
-			break;
-		// 其他聲母
-		default:
+
+		// 判斷輸入的注音符號是否爲ㄧㄨㄩ, 輸出True則輸入爲ㄧㄨㄩ; False則爲其他注音符號
+		bool isUJM = (zhuYinWen[i] == 'u' || zhuYinWen[i] == 'j' || zhuYinWen[i] == 'm');
+
+		// 判斷ㄧㄨㄩ是放在介音還是聲母的位置, 輸出True則ㄧㄨㄩ放在聲母位置; False則ㄧㄨㄩ放在介音位置
+		bool isIntial = (i==0 || (zhuYinWen[i-1] == ' ' || zhuYinWen[i-1] == '3' || zhuYinWen[i-1] == '4' || zhuYinWen[i-1] == '6' || zhuYinWen[i-1] == '7'));
+
+		if(!isUJM || (isUJM && isIntial)){
 			decodedPinYin += mapForPinYin[zhuYinWen[i]];
-			break;
+		}else{
+			switch (zhuYinWen[i])
+			{
+			// 若介音爲"ㄧ"
+			case 'u':
+				decodedPinYin += mapForU[zhuYinWen[i + 1]];
+				i += 1;
+				break;
+			// 若介音爲"ㄨ"
+			case 'j':
+				decodedPinYin += mapForJ[zhuYinWen[i + 1]];
+				i += 1;
+				break;
+			// 若介音爲"ㄩ"
+			case 'm':
+				decodedPinYin += mapForM[zhuYinWen[i + 1]];
+				i += 1;
+				break;
+			}
 		}
 	}
 
@@ -230,7 +224,7 @@ int main(){
 
 	std::cout << "拼音：" << changeToPinYin(zhuYinWen) << "\n";
 
-	// Linux也可以用的暫停方法
+	// 跨平台暫停方法
 	std::cout << "Press Enter Key To Continue...";
 	std::cin.get();
 
