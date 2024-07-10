@@ -78,7 +78,7 @@ std::string changeToPinYin(std::string zhuYinWen){
 
 	// 一般情況下的拼音map
 	std::map<char, std::string> mapForPinYin = {
-		{' ', "-"}, 
+		{' ', "-"},
 		{'1', "b"}, // ㄅ
 		{'q', "p"}, // ㄆ
 		{'a', "m"}, // ㄇ
@@ -180,25 +180,25 @@ std::string changeToPinYin(std::string zhuYinWen){
 
 		if(!isUJM || (isUJM && isInitial)){
 			decodedPinYin += mapForPinYin[zhuYinWen[i]];
-		}else{
-			switch (zhuYinWen[i])
-			{
-			// 若介音爲"ㄧ"
-			case 'u':
-				decodedPinYin += mapForU[zhuYinWen[i + 1]];
-				i += 1;
-				break;
-			// 若介音爲"ㄨ"
-			case 'j':
-				decodedPinYin += mapForJ[zhuYinWen[i + 1]];
-				i += 1;
-				break;
-			// 若介音爲"ㄩ"
-			case 'm':
-				decodedPinYin += mapForM[zhuYinWen[i + 1]];
-				i += 1;
-				break;
-			}
+			continue;
+		}
+		switch (zhuYinWen[i])
+		{
+		// 若介音爲"ㄧ"
+		case 'u':
+			decodedPinYin += mapForU[zhuYinWen[i + 1]];
+			i += 1;
+			break;
+		// 若介音爲"ㄨ"
+		case 'j':
+			decodedPinYin += mapForJ[zhuYinWen[i + 1]];
+			i += 1;
+			break;
+		// 若介音爲"ㄩ"
+		case 'm':
+			decodedPinYin += mapForM[zhuYinWen[i + 1]];
+			i += 1;
+			break;
 		}
 	}
 
