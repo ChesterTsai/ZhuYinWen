@@ -12,7 +12,7 @@
 
 /*
 void topTierPrinciple(){
-	if(!isCodeWorking){
+	if(isCodeWorking){
 		doNotChangeAnything();
 	}
 }
