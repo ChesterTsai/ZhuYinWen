@@ -10,6 +10,13 @@
 #include <algorithm>
 #include <map>
 
+/*
+void topTierPrinciple(){
+	if(!isCodeWorking){
+		doNotChangeAnything();
+	}
+}
+*/
 
 // 轉換成注音
 std::string changeToZhuYin(std::string zhuYinWen){
