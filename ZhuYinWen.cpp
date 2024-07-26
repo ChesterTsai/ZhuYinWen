@@ -189,8 +189,7 @@ std::string changeToPinYin(std::string zhuYinWen){
 			decodedPinYin += mapForPinYin[zhuYinWen[i]];
 			continue;
 		}
-		switch (zhuYinWen[i])
-		{
+		switch (zhuYinWen[i]){
 		// 若介音爲"ㄧ"
 		case 'u':
 			decodedPinYin += mapForU[zhuYinWen[i + 1]];
