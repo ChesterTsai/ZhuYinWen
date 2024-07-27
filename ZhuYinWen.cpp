@@ -3,7 +3,7 @@
 // @version	3.2
 // @description	Convert weird numbers and signs to zhuYin
 // @source	https://github.com/ChesterTsai/ZhuYinWen
-// @lastUpdate	2024.07.22
+// @lastUpdate	2024.07.27
 
 #include <iostream>
 #include <string>
