@@ -4,7 +4,7 @@
  * @version	3.2
  * @description	Convert weird numbers and signs to zhuYin
  * @source	https://github.com/ChesterTsai/ZhuYinWen
- * @lastUpdate	2024.07.27
+ * @lastUpdate	2024.08.07
  */
 
 #include <iostream>
@@ -158,7 +158,7 @@ std::map<char, std::string> mapForU = {
 	{'/', "ing"}	// 一ㄥ
 };
 
-// 轉換成注音
+
 std::string changeToZhuYin(std::string zhuYinWen)
 {
 	int lenOfInput = zhuYinWen.length();
@@ -171,7 +171,7 @@ std::string changeToZhuYin(std::string zhuYinWen)
 	return decodedZhuYin;
 }
 
-// 轉換成拼音
+
 std::string changeToPinYin(std::string zhuYinWen)
 {
 	int lenOfInput = zhuYinWen.length();
@@ -216,8 +216,8 @@ std::string changeToPinYin(std::string zhuYinWen)
 	return decodedPinYin;
 }
 
-// 將字串轉換成小寫
-void stolower(std::string &s)
+
+void stringToLower(std::string &s)
 {
 	std::transform(s.begin(), s.end(), s.begin(), [](unsigned char c) {
 		return std::tolower(c);
@@ -231,7 +231,7 @@ int main()
 	std::cout << "輸入注音文：";
 	std::getline(std::cin >> std::ws, zhuYinWen);
 
-	stolower(zhuYinWen);
+	stringToLower(zhuYinWen);
 
 	std::cout << "解譯結果：" << changeToZhuYin(zhuYinWen) << "\n";
 
