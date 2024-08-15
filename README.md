@@ -29,7 +29,7 @@ First step (Download the source code):
 第二步（編譯成執行檔）：<br>
 Second step (Compile it):
 
-    g++ -o ZhuYinWen.run ZhuYinWen.cpp
+    g++ ZhuYinWen.cpp -o ZhuYinWen.run
 第三步（執行程式）：<br>
 Third step (Run the program):
 
