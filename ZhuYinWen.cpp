@@ -1,4 +1,4 @@
-/*
+/**
  * @name	注音文解密器, ZhuYinWen Decoder
  * @author	Chester
  * @version	3.2
@@ -56,13 +56,13 @@
  *   .'//______.============-..   \ | /   ..-============.______\\`.
  * .'______________________________\|/______________________________`.
  *
- * 
- * 
- * 
- * 
- * 
+ *
+ *
+ *
+ *
+ *
  * 「键盘、电脑、书」
- * 
+ *
  * 作者：进军的王小二
  * 链接：https://juejin.cn/post/6905998341889490958
  * 来源：稀土掘金
@@ -190,10 +190,10 @@ std::map<char, std::string> mapForJ = {
 	{'/', "ong"}	// ㄨㄥ
 };
 
-/*
+/**
  * 偷偷放一個艾莉同學內褲圖，看看會不會有人發現
  * https://i.imgur.com/BWw0Kjl.png
-*/
+ */
 
 // 聲母爲"ㄧ"時的對照表
 std::map<char, std::string> mapForU = {
@@ -233,18 +233,18 @@ std::string changeToPinYin(std::string zhuYinWen)
 
 	for(int i = 0; i < lenOfInput; i++) {
 
-		/* 
+		/**
 		 * 判斷輸入的注音符號是否爲ㄧㄨㄩ,
 		 * 輸出True則輸入爲ㄧㄨㄩ;
 		 * False則爲其他注音符號
-		*/
+		 */
 		bool isUJM = (zhuYinWen[i] == 'u' || zhuYinWen[i] == 'j' || zhuYinWen[i] == 'm');
 
-		/*
+		/**
 		 * 判斷ㄧㄨㄩ是放在介音還是聲母的位置,
 		 * 輸出True則ㄧㄨㄩ放在聲母位置;
 		 * False則ㄧㄨㄩ放在介音位置
-		*/
+		 */
 		bool isInitial = (i==0 || (zhuYinWen[i-1] == ' ' || zhuYinWen[i-1] == '3' || zhuYinWen[i-1] == '4' || zhuYinWen[i-1] == '6' || zhuYinWen[i-1] == '7'));
 
 		if(!isUJM) {
