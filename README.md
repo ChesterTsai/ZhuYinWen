@@ -34,6 +34,13 @@ Second step (Compile it):
 Third step (Run the program):
 
     ./ZhuYinWen.run
+<br />
+<br />
+<br />
+如果您想一次執行完，也可以把指令全部串接起來：<br>
+If you want to do all this at once, the commands can also be chained together:
+
+    git clone https://github.com/ChesterTsai/ZhuYinWen.git && cd ZhuYinWen && g++ ZhuYinWen.cpp -o ZhuYinWen.run && ./ZhuYinWen.run
 
 ### 或是 Or<br />
 
@@ -50,3 +57,10 @@ Second step (Give it permission to run the file):
 Third step (Run the program):
 
     ./ZhuYinWen.run
+<br />
+<br />
+<br />
+如果您想一次執行完，也可以把指令全部串接起來：<br>
+If you want to do all this at once, the commands can also be chained together:
+
+    wget https://github.com/ChesterTsai/ZhuYinWen/releases/latest/download/ZhuYinWen.run && chmod +x ./ZhuYinWen.run && ./ZhuYinWen.run
