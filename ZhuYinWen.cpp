@@ -1,10 +1,10 @@
 /**
  * @name	注音文解密器, ZhuYinWen Decoder
  * @author	Chester
- * @version	3.2
+ * @version	3.3
  * @description	Convert weird numbers and signs to zhuYin
  * @source	https://github.com/ChesterTsai/ZhuYinWen
- * @lastUpdate	2024.08.20
+ * @lastUpdate	2024.09.26
  */
 
 #include <iostream>
@@ -61,12 +61,12 @@
  *
  *
  *
- * 「键盘、电脑、书」
+ * 「鍵盤、電腦、書」
  *
- * 作者：进军的王小二
- * 链接：https://juejin.cn/post/6905998341889490958
- * 来源：稀土掘金
- * 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+ * 作者：進軍的王小二
+ * 鏈接：https://juejin.cn/post/6905998341889490958
+ * 來源：稀土掘金
+ * 著作權歸作者所有。商業轉載請聯系作者獲得授權，非商業轉載請注明出處。
  */
 
 
@@ -289,19 +289,20 @@ void stringToLower(std::string &s)
 
 int main()
 {
-	std::string zhuYinWen = "";
-	std::cout << "輸入注音文：";
-	std::getline(std::cin >> std::ws, zhuYinWen);
+	std::string zhuYinWen;
 
-	stringToLower(zhuYinWen);
+	while(1) {
+		zhuYinWen = "";
 
-	std::cout << "解譯結果：" << changeToZhuYin(zhuYinWen) << "\n";
+		std::cout << "輸入注音文(按下CTRL+C暫停)：";
+		std::getline(std::cin >> std::ws, zhuYinWen);
 
-	std::cout << "拼音：" << changeToPinYin(zhuYinWen) << "\n";
+		stringToLower(zhuYinWen);
 
-	// 跨平台暫停方法
-	std::cout << "Press Enter Key To Continue...";
-	std::cin.get();
+		std::cout << "解譯結果：" << changeToZhuYin(zhuYinWen) << "\n";
+
+		std::cout << "拼音：" << changeToPinYin(zhuYinWen) << "\n\n";	
+	}
 
 	return 0;
 }
