@@ -5,9 +5,7 @@
 下載下來的源碼需要被轉換成ASCII編碼以防止顯示亂碼，因為Windows是使用ASCII而不是Linux或Mac使用的UTF-8編碼。<br />
 
 # Windows:<br>
-您可以依照上面的提示對原碼進行編譯，也可以直接下載最新版本:
-
-[最新版本下載](https://github.com/ChesterTsai/ZhuYinWen/releases/latest/download/ZhuYinWen.exe)
+您可以依照上面的提示對原碼進行編譯，也可以直接[下載最新版本](https://github.com/ChesterTsai/ZhuYinWen/releases/latest/download/ZhuYinWen.exe)
 
 # Linux:<br />
 您可以選擇<br />
