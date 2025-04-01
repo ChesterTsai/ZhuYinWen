@@ -1,11 +1,5 @@
-注意：如果你下載源碼並使用Dev-C++這款編譯器的話，那麼你需要注意以下兩點。<br />
-1. 你100%是個Windows用戶。<br />
-2. 請在編譯器選項、連結器命令行中打上「-std=c++11」，讓編譯器可以讀到C++98沒有的指令跟函式庫。<br />
-※若您選擇下載源碼，這是需要注意的：<br />
-下載下來的源碼需要被轉換成ASCII編碼以防止顯示亂碼，因為Windows是使用ASCII而不是Linux或Mac使用的UTF-8編碼。<br />
-
 # Windows:<br>
-您可以依照上面的提示對原碼進行編譯，也可以直接[下載最新版本](https://github.com/ChesterTsai/ZhuYinWen/releases/latest/download/ZhuYinWen.exe)
+您可以對原碼進行編譯，也可以直接[下載最新版本](https://github.com/ChesterTsai/ZhuYinWen/releases/latest/download/ZhuYinWen.exe)
 
 # Linux:<br />
 您可以選擇<br />

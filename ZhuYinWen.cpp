@@ -7,6 +7,7 @@
  * @lastUpdate	2024.09.26
  */
 
+#include <cstdlib>
 #include <iostream>
 #include <string>
 #include <algorithm>
@@ -69,6 +70,10 @@
  * 著作權歸作者所有。商業轉載請聯系作者獲得授權，非商業轉載請注明出處。
  */
 
+#ifdef _WIN32
+	// Set the console to expect codepage 65001 = UTF-8.
+    const int setting_utf8 = std::system("chcp 65001 >nul");
+#endif
 
 // 英文及符號所對應的注音
 std::map<char, std::string> mapForZhuYin = {
