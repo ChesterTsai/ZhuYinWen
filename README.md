@@ -1,41 +1,29 @@
-# Windows:<br>
-您可以對原碼進行編譯，也可以直接[下載最新版本](https://github.com/ChesterTsai/ZhuYinWen/releases/latest/download/ZhuYinWen.exe)
+# 運行程式<br>
 
-# Linux:<br />
-您可以選擇<br />
+### 方法1:<br>
+下載並運行最新版本：<br>
+&emsp;-[Windows版](https://github.com/ChesterTsai/ZhuYinWen/releases/latest/download/ZhuYinWen.exe) <br>
+&emsp;-[Linux版](https://github.com/ChesterTsai/ZhuYinWen/releases/latest/download/ZhuYinWen.run) <br>
+
+### 方法2:<br>
+下載並自行編譯成執行檔：<br>
 <br>
-1.下載源碼，並自行編譯成執行檔。<br />
 第一步（下載源碼）：
 
     git clone https://github.com/ChesterTsai/ZhuYinWen.git && cd ZhuYinWen
-第二步（編譯成執行檔）：
+第二步（編譯成執行檔）：<br>
+&emsp;Windows:
 
-    g++ ZhuYinWen.cpp -o ZhuYinWen.run
-第三步（執行程式）：
+    g++ main.cpp -o ZhuYinWen.exe
 
-    ./ZhuYinWen.run
-<br />
-<br />
-<br />
-如果您想一次執行完，也可以把指令全部串接起來：
+&emsp;Linux:
 
-    git clone https://github.com/ChesterTsai/ZhuYinWen.git && cd ZhuYinWen && g++ ZhuYinWen.cpp -o ZhuYinWen.run && ./ZhuYinWen.run
+	g++ main.cpp -o ZhuYinWen.run
+第三步（執行程式）：<br>
+&emsp;Windows:
 
-### 或是<br />
+    .\ZhuYinWen.exe
 
-2.直接下載最新版本。<br />
-第一步（下載最新版本）：
+&emsp;Linux:
 
-    wget https://github.com/ChesterTsai/ZhuYinWen/releases/latest/download/ZhuYinWen.run
-第二步（給予運行權限）：
-
-    chmod +x ./ZhuYinWen.run
-第三步（執行程式）：
-
-    ./ZhuYinWen.run
-<br />
-<br />
-<br />
-如果您想一次執行完，也可以把指令全部串接起來：
-
-    wget https://github.com/ChesterTsai/ZhuYinWen/releases/latest/download/ZhuYinWen.run && chmod +x ./ZhuYinWen.run && ./ZhuYinWen.run
+	./ZhuYinWen.run
