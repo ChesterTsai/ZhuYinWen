@@ -12,13 +12,8 @@
 
     git clone https://github.com/ChesterTsai/ZhuYinWen.git && cd ZhuYinWen
 第二步（編譯成執行檔）：<br>
-&emsp;Windows:
 
-    g++ main.cpp -o ZhuYinWen.exe
-
-&emsp;Linux:
-
-	g++ main.cpp -o ZhuYinWen.run
+	g++ main.cpp
 第三步（執行程式）：<br>
 &emsp;Windows:
 
