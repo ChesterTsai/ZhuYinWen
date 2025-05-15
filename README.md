@@ -17,8 +17,8 @@
 第三步（執行程式）：<br>
 &emsp;Windows:
 
-    .\ZhuYinWen.exe
+    .\a.exe
 
 &emsp;Linux:
 
-	./ZhuYinWen.run
+	./a.run
