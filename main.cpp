@@ -208,7 +208,6 @@ std::map<char, std::string> mapForU = {
 	{'/', "ing"}	// 一ㄥ
 };
 
-
 std::string changeToZhuYin(std::string zhuYinWen)
 {
 	int lenOfInput = zhuYinWen.length();
@@ -220,7 +219,6 @@ std::string changeToZhuYin(std::string zhuYinWen)
 
 	return decodedZhuYin;
 }
-
 
 std::string changeToPinYin(std::string zhuYinWen)
 {
@@ -273,7 +271,6 @@ std::string changeToPinYin(std::string zhuYinWen)
 
 	return decodedPinYin;
 }
-
 
 void stringToLower(std::string &s)
 {
